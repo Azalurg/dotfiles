@@ -83,6 +83,10 @@ colors:
 #    cyan: "#0db9d7"
 #    white: "#acb0d0"
 
+mouse_bindings:
+  - { mouse: Middle, action: Copy }
+  - { mouse: Right, action: Paste}
+
 selection:
   save_to_clipboard: false
 
