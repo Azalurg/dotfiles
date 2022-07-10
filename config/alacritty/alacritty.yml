@@ -1,3 +1,6 @@
+env:
+  TERM: 'xterm-256color'
+
 window:
   title: Azalurg
   dimensions:
@@ -9,13 +12,11 @@ window:
   class:
     instance: Alacritty
     general: Alacritty
-  opacity: 0.9
-
+  opacity: 0.85			
 
 scrolling:
-  history: 10000
+  history: 1000
   multiplier: 3
-
 
 font:
   normal:
@@ -30,8 +31,7 @@ font:
   bold_italic:
     family: Anonymice Nerd Font Mono
     style: BoldItalic
-  size: 15.5
-
+  size: 12.5
 
 draw_bold_text_with_bright_colors: true
 
@@ -60,6 +60,7 @@ colors:
     cyan: "#56b6c2"
     white: "#eceff4"
 
+# Tokyo Night
 #colors:
 #  primary:
 #    background: "#11121D"
@@ -93,5 +94,7 @@ selection:
 shell:
   program: /usr/bin/zsh
 
-key_bindings:
-  - { key: Return, mods: Super|Shift, action: SpawnNewInstance }
+cursor:
+  style: 'Beam'
+
+  vi_mode_style: 'Underline'
