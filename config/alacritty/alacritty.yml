@@ -35,10 +35,9 @@ font:
 
 draw_bold_text_with_bright_colors: true
 
-# Tokyo Night
 colors:
  primary:
-   background: "#12101d"
+   background: "#1e2127"
    foreground: "#e6e6fa"
  normal:
    black: "#455a64"

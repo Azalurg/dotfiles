@@ -105,8 +105,10 @@ source $ZSH/oh-my-zsh.sh
 # Git alias
 
 alias g="git"
-alias ga="git add ."
+alias ga="git add"
+alias gaa="git add ."
 alias gc="git commit"
+alias gcm"git commit -m"
 alias gcam="git commit -am"
 alias gs="git status"
 alias gp="git push"
@@ -120,3 +122,11 @@ alias lsl="ls -l"
 alias lsa="ls -a"
 alias lsal="ls -al"
 alias nv="nvim"
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
