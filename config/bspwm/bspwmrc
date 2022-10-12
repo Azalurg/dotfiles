@@ -22,7 +22,7 @@ if [[ $dp = *connected* ]]; then
 	bspc monitor DP-2 -d d1 d2 d3 d4 d5
 fi
 
-if [[ $hdmi = *connected* && $dp = *connected* ]]; then
+if [[ $hdmi != *connected* && $dp != *connected* ]]; then
 	xrandr --output eDP-1 --off
 else
 	bspc monitor -d I II III IV V
