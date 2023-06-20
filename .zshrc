@@ -31,6 +31,9 @@ alias gs="git status"
 alias gp="git push"
 alias gl="git pull"
 alias glg="git log"
+alias gf="git fetch"
+alias gb="git branch"
+alias gsw="git switch"
 
 # My alias
 
