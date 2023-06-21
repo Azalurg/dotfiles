@@ -27,11 +27,11 @@ super + x
 
 # application menu
 super + d
-	rofi -show drun -theme Arc-Dark -icon-theme "Tela-circle" -show-icons
+	sh $HOME/.config/rofi/launchers/main.sh
 
 # power menu
 super + p
-	rofi -show drun -theme c64 -icon-theme "Tela-circle" -show-icons
+	sh $HOME/.config/rofi/launchers/powermenu.sh
 
 #
 # bspwm hotkeys

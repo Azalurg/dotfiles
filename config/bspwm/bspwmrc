@@ -1,14 +1,8 @@
 #! /bin/sh
 
-#pgrep -x sxhkd > /dev/null || sxhkd &
-sxhkd &
-nm-applet &
-$HOME/.config/polybar/launch.sh
-feh --bg-fill /home/azalurg/.local/share/backgrounds/wallpaper.jpg
-#udiskie &
-picom &
+pgrep -x sxhkd > /dev/null || sxhkd &
 
-# set monitors 
+# set monitors
 hdmi=$(xrandr -q | grep 'HDMI')
 dp=$(xrandr -q | grep 'DP-2')
 
@@ -25,9 +19,10 @@ fi
 if [[ $hdmi != *connected* && $dp != *connected* ]]; then
 	xrandr --output eDP-1 --off
 else
-	bspc monitor -d I II III IV V
+	bspc monitor -d     
 fi
 
+# bsp setup
 bspc config border_width         1
 bspc config window_gap          8
 
@@ -40,3 +35,10 @@ bspc config gapless_monocle      true
 # bspc rule -a mplayer2 state=floating
 # bspc rule -a Kupfer.py focus=on
 # bspc rule -a Screenkey manage=off
+
+# autostart 
+nm-applet --indicator &	# networt applet
+$HOME/.config/polybar/launch.sh	# polybar
+feh --bg-fill /home/azalurg/.local/share/backgrounds/wallpaper.jpg	# wallpaper
+picom -b &	# compositor
+xsetroot -cursor_name left_ptr &	#cursor
