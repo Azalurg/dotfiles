@@ -1,0 +1,103 @@
+@import "_colors.rasi"
+
+* {
+    font: "AnonymicePro Nerd Font Mono 12";
+}
+
+configuration {
+	modi:                       "drun";
+    show-icons:                 true;
+    display-drun:               " ";
+	drun-display-format:        "{name}";
+}
+
+window {
+    location:                    north;
+    anchor:                      north;
+    width:                       75%;
+    height:                      70%;
+    x-offset:                    0px;
+    y-offset:                    5%;
+
+    border-radius:               2%;
+    background-color:            @background;
+    children:                    [ "inputbar", "listview" ];
+}
+
+inputbar {
+    spacing:                     10px;
+    padding:                     15px;
+    background-color:            @accent;
+    text-color:                  @foreground-alt;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+
+entry {
+    background-color:            inherit;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search...";
+    placeholder-color:           inherit;
+}
+
+listview {
+    columns:                     8;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    padding:                     1%;
+    background-color:            transparent;
+}
+
+// todo
+
+element {
+    margin:                      0px;
+    padding:                     1%;
+    background-color:            transparent;
+    border:                      1px solid;
+    border-radius:               0.5%;
+    text-color:                  @foreground;
+    orientation:                 vertical;
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+element selected.normal {
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+}
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        5%;
+    cursor:                      inherit;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    padding:                     5px 10px;
+}
+
+element-text selected.normal {
+    background-color:            @accent;
+    text-color:                  @foreground-alt;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    padding:                     10px;
+    border-radius :              10px;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
