@@ -1,15 +1,5 @@
 #!/usr/bin/env bash
 
-## Author : Aditya Shakya (adi1090x)
-## Github : @adi1090x
-#
-## Rofi   : Power Menu
-#
-## Available Styles
-#
-## style-1   style-2   style-3   style-4   style-5
-## style-6   style-7   style-8   style-9   style-10
-
 # Current Theme
 theme="$HOME/.config/rofi/config/powermenu.rasi"
 
@@ -66,8 +56,7 @@ run_cmd() {
 		elif [[ $1 == '--reboot' ]]; then
 			systemctl reboot
 		elif [[ $1 == '--suspend' ]]; then
-			betterlockscreen -l
-			systemctl suspend
+			betterlockscreen -l & systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
 			if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
 				openbox --exit

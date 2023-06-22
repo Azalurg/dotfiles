@@ -44,8 +44,9 @@ sudo pacman -S code docker docker-compose kubectl minikube
 <details>
 <summary><strong>Wallpapers<strong></summary>
  
-- [Main](https://www.pexels.com/photo/lake-and-mountain-under-white-sky-443446/)
-<!-- - [Secondary](https://www.pexels.com/photo/scenic-photo-of-lake-surrounded-by-trees-1903702/) -->
+- [Lake](https://www.pexels.com/photo/lake-and-mountain-under-white-sky-443446/)
+- [Tokyo](https://www.wallpaperflare.com/cyberpunk-purple-fantasy-art-city-fantasy-city-concept-art-wallpaper-cvfaq/download/1920x1080)
+
 </details>
 
 <!-- ## Colorscheme -->
@@ -53,9 +54,9 @@ sudo pacman -S code docker docker-compose kubectl minikube
 ## src/inspiration
 
 |    Where/Who     |  Use  |
-   | :--------------: | :---: |
-   | [`janleigh`](https://github.com/janleigh/dotfiles) | README.md |
-   | [`willHol`](https://github.com/willHol/polybar-crypto) | polybar-crypto |
+| :--------------: | :---: |
+| [`janleigh`](https://github.com/janleigh/dotfiles)  | README.md |
+| [`adi1090x`](https://github.com/adi1090x)           | rofi      |
 
 <!-- ## todo
 - [ ] polybar
