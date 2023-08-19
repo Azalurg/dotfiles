@@ -20,16 +20,16 @@ scrolling:
 
 font:
   normal:
-    family: AnonymicePro Nerd Font Mono
+    family: Anonymice Nerd Font Mono
     style:  Regular
   bold:
-    family: AnonymicePro Nerd Font Mono
+    family: Anonymice Nerd Font Mono
     style:  Bold
   italic:
-    family: AnonymicePro Nerd Font Mono
+    family: Anonymice Nerd Font Mono
     style:  MediumItalic
   bold_italic:
-    family: AnonymicePro Nerd Font Mono
+    family: Anonymice Nerd Font Mono
     style: BoldItalic
   size: 12
 
