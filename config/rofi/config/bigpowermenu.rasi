@@ -1,0 +1,117 @@
+@import "_colors.rasi"
+
+configuration {
+    show-icons:                 false;
+}
+
+window {
+    transparency:                "background";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  true;
+    cursor:                      "default";
+    background-color:            black/70%;
+}
+
+mainbox {
+    enabled:                     true;
+    margin:                      0 21%;
+    background-color:            transparent;
+    spacing: 2%;
+    children:                    [ "dummy", "logo-wrapper", "textbox-hello", "listview", "message", "dummy"];
+}
+
+logo-wrapper {
+    children: ["dummy","logo", "dummy"];
+    orientation: horizontal;
+    background-color: transparent;
+}
+
+logo {
+    expand: false;
+    background: transparent; 
+    background-image: url("~/.config/rofi/config/logo.png", width);
+    border: 2px;
+    border-color: white;
+    border-radius: 100%;
+    width: 12.5%;
+    height: 100%;   
+}
+
+textbox-hello {
+    expand: false;
+    font:                        "AnonymicePro Nerd Font Mono 32";
+    background-color:            transparent;
+    text-color:                  @foreground;
+    content: "Is it the end?";
+    height: 100%;
+    horizontal-align: 0.5;
+}
+
+message {
+    enabled:                     true;
+    expand: false;
+    height: 20%;
+    margin:                      0% 20%;
+    padding:                     1%;
+    border-radius:               100%;
+    border: 2px;
+    border-color: white;
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+textbox {
+    font:                        "AnonymicePro Nerd Font Mono 16";
+    background-color:            transparent;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+
+listview {
+    enabled:                     true;
+    expand: false;
+    columns:                     5;
+    lines:                       1;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     3%;
+    background-color:            transparent;
+    cursor:                      "default";
+}
+
+element {
+    enabled:                     true;
+    padding:                     5% 0%;
+    border-radius:               100%;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+    border: 2px;
+    border-color: white;
+}
+
+element-text {
+    font:                        "AnonymicePro Nerd Font Mono 48";
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+
+element selected.normal {
+    background-color:            @accent;
+    text-color:                  @foreground-alt;
+}
+
+dummy{
+    background-color: transparent;
+}
