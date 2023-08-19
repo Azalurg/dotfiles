@@ -38,11 +38,12 @@ alias gsw="git switch"
 # My alias
 
 alias cls="clear"
-alias ls="ls --color"
-alias ll="ls -al --color"
-alias lsl="ls -l"
-alias lsa="ls -a"
-alias lsal="ls -al"
+alias la="lsd -a"
+alias ls="lsd"
+alias ll="lsd -al"
+alias lsl="lsd -l"
+alias lsa="lsd -a"
+alias lsal="lsd -al"
 alias nv="nvim"
 
 alias ..="cd .."
