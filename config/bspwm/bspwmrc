@@ -3,24 +3,11 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # set monitors
-hdmi=$(xrandr -q | grep 'HDMI')
-dp=$(xrandr -q | grep 'DP-2')
+xrandr --output HDMI-A-0 --primary --mode 1920x1080
+xrandr --output DisplayPort-0 --right-of HDMI-A-0
 
-if [[ $hdmi = *connected* ]]; then
-	xrandr --output HDMI-1 --primary
-	bspc monitor HDMI-1 -d h1 h2 h3 h4 h5
-fi
-
-if [[ $dp = *connected* ]]; then
-	xrandr --output DP-2 --right-of HDMI-1
-	bspc monitor DP-2 -d d1 d2 d3 d4 d5
-fi
-
-if [[ $hdmi != *connected* && $dp != *connected* ]]; then
-	xrandr --output eDP-1 --off
-else
-	bspc monitor -d     
-fi
+bspc monitor HDMI-A-0 -d     
+bspc monitor DisplayPort-0 -d 1 2 3 4 5
 
 # bsp setup
 bspc config border_width         1
@@ -39,6 +26,6 @@ bspc config gapless_monocle      true
 # autostart 
 nm-applet --indicator &	# networt applet
 $HOME/.config/polybar/launch.sh	# polybar
-feh --bg-fill /home/azalurg/.local/share/img/wallpaper.jpg	# wallpaper
+feh --bg-fill /usr/share/backgrounds/wallpaper.jpg	# wallpaper
 picom -b &	# compositor
-xsetroot -cursor_name left_ptr &	#cursor
+dunst & #notification-daemon 

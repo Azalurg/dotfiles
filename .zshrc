@@ -58,11 +58,11 @@ export NVM_DIR="$HOME/.nvm"
 
 # Plugins
 ZSH_PLUGINS=$HOME/.config/zsh
-source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH_PLUGINS/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $ZSH_PLUGINS/zsh-auto-notify/auto-notify.plugin.zsh
 source $ZSH_PLUGINS/powerlevel10k/powerlevel10k.zsh-theme
+source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
