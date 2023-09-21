@@ -1,0 +1,60 @@
+#### Check for yay ####
+ISYAY=/sbin/yay
+if [ -f "$ISYAY" ]; then 
+    echo -e "yay was located, moving on.\n"
+    yay -Suy
+else 
+    echo -e "yay was not located, please install yay.\n"
+    exit 
+fi
+
+read -n1 -rep 'Would you like to install the packages? (y,n)' INST
+if [[ $INST == "Y" || $INST == "y" ]]; then
+    yay -S --noconfirm bspwm sxhkd rofi neovim alacritty zsh polybar \
+    cmatrix cbonsai gotop htop tree thunar gvfs brave-bin feh xarchiver \
+    zip unzip git wget github-cli openssh code lightdm xorg-server lsd \
+    lightdm-gtk-greeter nm-applet ttf-anonymouspro-nerd picom \
+    xdg-user-dirs blender gimp vlc spotify-launcher neofetch betterlockscreen\
+    lightdm-webkit2-greeter dunst ristretto xfce4-screenshooter mousepad \
+    galculator
+
+    sudo systemctl enable lightdm
+    xdg-user-dirs-update
+fi
+
+read -n1 -rep 'Would you like to install AMD GPU drivers (y,n)' INST
+if [[ $INST == "Y" || $INST == "y" ]]; then
+    yay -S --noconfirm mesa xf86-video-amd-gpu xf86-video-amdgpu libva-mesa-driver
+fi
+
+read -n1 -rep 'Would you like to install laptop packages? (y,n)' LAPTOP
+if [[ $LAPTOP == "Y" || $LAPTOP == "y" ]]; then
+    yay -S --noconfirm brightnessctl xfce4-power-manager
+fi
+
+read -n1 -rep 'Would you like to copy config files? (y,n)' CFG
+if [[ $CFG == "Y" || $CFG == "y" ]]; then
+    echo -e "Copying config files...\n"
+    cp -R config/* ~/.config/
+fi
+
+read -n1 -rep 'Would you like to install zsh extensions? (y,n)' ZSH
+if [[ $ZSH == "Y" || $ZSH == "y" ]]; then
+    mkdir ~/.config/zsh
+    cd ~/.confing/zsh
+
+    git clone https://github.com/romkatv/powerlevel10k.git
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git
+    git clone https://github.com/zsh-users/zsh-history-substring-search.git
+    git clone https://github.com/MichaelAquilina/zsh-auto-notify.git
+
+    cd - 
+fi
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# TODO
+# betterlockscreen init and load wallpaper
+# xfce theme setup
+# dunst config
