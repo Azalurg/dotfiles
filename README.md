@@ -1,8 +1,10 @@
 # Dotfiles
 
-Hi, here you can find dotfiles I on my daily bassy. 
+<img src="./screenshot.png" alt="screenshot" align="right" width="400px">
 
-## Setup info
+
+Hi, here you can explore the dotfiles I use on a daily basis.
+
 - **Window Manager:** [bspwm](https://github.com/baskerville/bspwm)
 - **Terminal:** [alacritty](https://github.com/alacritty/alacritty)
 - **Shell:** [zsh](https://www.zsh.org/)
@@ -11,61 +13,68 @@ Hi, here you can find dotfiles I on my daily bassy.
 - **File Manager:** [thunar](https://github.com/xfce-mirror/thunar)
 - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
 
-## Installation
+## Installation (Arch)
 
-Quick Ctrl+C Ctrl+V pacman line with essentials to make the system work.
+- After clean Arch installation you will need download git and text editor:
 
-```sh
-sudo pacman -S bspwm sxhkd rofi neovim alacritty zsh brightnessctl polybar 
+```bash
+sudo pacman -S git neovim
 ```
 
-<details>
-  <summary><strong>Some packages I like to include in new OS.</summary></strong>
+- Install [yay](https://github.com/Jguer/yay#installation)
+- Clone dotfiles:
 
-```sh
-sudo pacman -S sl cmatrix tree htop thunar
+```bash
+git clone https://github.com/Azalurg/dotfiles.git
 ```
-</details>
 
-<details>
-  <summary><strong>Development tools I use</summary></strong>
+- Run installation script (!!! not ready yet !!!) or instal packages manually and copy config files.
 
-```sh
-sudo pacman -S code docker docker-compose kubectl minikube 
+```bash
+cd dotfiles
+sudo chmod +x setup
+./setup
 ```
-</details>
 
-<!-- <details>
-<summary><strong>Fonts<strong></summary>
+## Wallpapers
 
-`for future use`
-</details> -->
+<table>
+    <tr>
+        <td align="center"><a href="https://www.wallpaperflare.com/cyberpunk-purple-fantasy-art-city-fantasy-city-concept-art-wallpaper-cvfaq">wallpaper</a></td>
+        <td align="center"><a href="https://www.1zoom.me/pl/wallpaper/575075/z4503.9">lockscreen</a></td>
+        <td align="center"><a href="https://www.pxfuel.com/en/desktop-wallpaper-jlldx">grub</a></td>
+    <tr>
+    <tr>
+        <td><a href="https://www.wallpaperflare.com/cyberpunk-purple-fantasy-art-city-fantasy-city-concept-art-wallpaper-cvfaq"><img src="./usr/share/backgrounds/wallpaper.jpg" alt="wallpaper" width=300px></a></td>
+        <td><a href="https://www.1zoom.me/pl/wallpaper/575075/z4503.9"><img src="./usr/share/backgrounds/lockscreen.jpg" alt="lockscreen" width=300px></a></td>
+        <td><a href="https://www.pxfuel.com/en/desktop-wallpaper-jlldx"><img src="./usr/share/backgrounds/grub.png" alt="grub" width=300px></a></td>
+    </tr>
+</table>
 
-<details>
-<summary><strong>Wallpapers<strong></summary>
- 
-- [Lake](https://www.pexels.com/photo/lake-and-mountain-under-white-sky-443446/)
-- [Tokyo](https://www.wallpaperflare.com/cyberpunk-purple-fantasy-art-city-fantasy-city-concept-art-wallpaper-cvfaq/download/1920x1080)
 
-</details>
 
 <!-- ## Colorscheme -->
 
-## src/inspiration
+## Inspiration
+
+Here is a list of developers/artists I get inspiration and source code from ;-)
 
 |    Where/Who     |  Use  |
 | :--------------: | :---: |
-| [`janleigh`](https://github.com/janleigh/dotfiles)  | README.md |
-| [`adi1090x`](https://github.com/adi1090x)           | rofi      |
+| [`janleigh`](https://github.com/janleigh/dotfiles)        | README.md |
+| [`adi1090x`](https://github.com/adi1090x/rofi)            | rofi      |
+| [`SolDoesTech`](https://github.com/SolDoesTech/hyprland)  | setup script |
 
-<!-- ## todo
-- [ ] polybar
-- [ ] rofi
+## Todo
+
+Sort by priority:
+
+- [ ] color-schema / style / backgrounds
+- [ ] dunst
+- [ ] rofi - finish
+- [ ] polybar - refresh
+- [ ] script
 - [ ] neofetch 
-- [ ] zsh 
-- [ ] discord
-- [ ] brave 
-- [ ] spotify -->
-
-## archives
-- [Ulauncher-theme](https://github.com/GiorgioReale/Ulauncher-Essential-Dark-Theme)
+- [ ] [widgets](https://github.com/rxyhn/tokyo) ??? 
+- [ ] picom
+- [ ] gtk-3.0 ???

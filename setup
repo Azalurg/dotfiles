@@ -16,9 +16,13 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     lightdm-gtk-greeter nm-applet ttf-anonymouspro-nerd picom \
     xdg-user-dirs blender gimp vlc spotify-launcher neofetch betterlockscreen\
     lightdm-webkit2-greeter dunst ristretto xfce4-screenshooter mousepad \
-    galculator
+    galculator ranger ncdu hollywood arc-icon-theme nordic-darker-theme \
+    cups cups-pdf gtklp system-config-printer epdfview-gtk3 plex-media-player \
+    xorg-drivers xorg-xkill xorg base-devel gparted 
+    
 
     sudo systemctl enable lightdm
+    sudo systemctl enable cups #printers
     xdg-user-dirs-update
 fi
 
