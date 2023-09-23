@@ -18,9 +18,9 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     lightdm-webkit2-greeter dunst ristretto xfce4-screenshooter mousepad \
     galculator ranger ncdu hollywood arc-icon-theme nordic-darker-theme \
     cups cups-pdf gtklp system-config-printer epdfview-gtk3 plex-media-player \
-    xorg-drivers xorg-xkill xorg base-devel gparted 
+    xorg-drivers xorg-xkill xorg base-devel gparted nerdfetch networkmanager
     
-
+    sudo systemctl enable NetworkManager
     sudo systemctl enable lightdm
     sudo systemctl enable cups #printers
     xdg-user-dirs-update
@@ -57,6 +57,8 @@ if [[ $ZSH == "Y" || $ZSH == "y" ]]; then
 fi
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+setxkbmap -layout pl #set keyboard layout
+chsh -s /bin/zsh #shell change
 
 # TODO
 # betterlockscreen init and load wallpaper
