@@ -64,6 +64,7 @@ Here is a list of developers/artists I get inspiration and source code from ;-)
 | [`janleigh`](https://github.com/janleigh/dotfiles)        | README.md |
 | [`adi1090x`](https://github.com/adi1090x/rofi)            | rofi      |
 | [`SolDoesTech`](https://github.com/SolDoesTech/hyprland)  | setup script |
+| [`prasanthrangan`](https://github.com/prasanthrangan/hyprdots)  | neofetch |
 
 ## Todo
 
@@ -74,7 +75,7 @@ Sort by priority:
 - [ ] rofi - finish
 - [ ] polybar - refresh
 - [ ] script
-- [ ] neofetch 
+- [x] neofetch 
 - [ ] [widgets](https://github.com/rxyhn/tokyo) ??? 
 - [ ] picom
 - [ ] gtk-3.0 ???
