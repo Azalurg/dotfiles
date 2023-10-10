@@ -11,14 +11,14 @@ bspc monitor DisplayPort-0 -d 1 2 3 4 5
 # bspc monitor DisplayPort-0 -d     
 
 # bsp setup
-bspc config border_width         1
+bspc config border_width         2
 bspc config window_gap           4
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config normal_border_color "#111111"
-bspc config focused_border_color "#4477ff"
+bspc config focused_border_color "#77dd77"
 
 bspc rule -a code-oss desktop='^1'
 bspc rule -a Spotify desktop='^4'
@@ -30,3 +30,5 @@ $HOME/.config/polybar/launch.sh	# polybar
 feh --bg-fill /usr/share/backgrounds/wallpaper.jpg	# wallpaper
 picom -b &	# compositor
 dunst & # notification-daemon
+pasystray & # pulseaudio applet
+setxkbmap -layout pl
