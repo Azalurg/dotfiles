@@ -1,0 +1,13 @@
+#!/bin/bash
+
+workdir="$HOME/.config/rice/themes/aura"
+
+bspc config top_padding 0
+bspc config bottom_padding 0
+bspc config normal_border_color "#ab9cff"
+bspc config focused_border_color "#dd9ce7"
+
+feh --bg-fill $workdir/wallpapers/wallpaper-01.jpg $workdir/wallpapers/wallpaper-02.jpg
+
+killall polybar
+polybar -q bar1 -c $workdir/polybar/config.ini &

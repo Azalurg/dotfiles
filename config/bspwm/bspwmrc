@@ -32,3 +32,11 @@ picom -b &	# compositor
 dunst & # notification-daemon
 pasystray & # pulseaudio applet
 setxkbmap -layout pl
+
+# fix java applications
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# set theme 
+read -r THEME < "$HOME"/.config/rice/.rice
+sh $HOME/.config/rice/set $THEME
+export THEME=$THEME

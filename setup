@@ -13,12 +13,15 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     yay -S --noconfirm bspwm sxhkd rofi neovim alacritty zsh polybar \
     cmatrix cbonsai gotop htop tree thunar gvfs brave-bin feh xarchiver \
     zip unzip git wget github-cli openssh code lightdm xorg-server lsd \
-    lightdm-gtk-greeter nm-applet ttf-anonymouspro-nerd picom \
-    xdg-user-dirs blender gimp vlc spotify-launcher neofetch betterlockscreen\
+    lightdm-gtk-greeter nm-applet ttf-anonymouspro-nerd picom libnotify\
+    xdg-user-dirs blender gimp vlc spotify neofetch betterlockscreen\
     lightdm-webkit2-greeter dunst ristretto xfce4-screenshooter mousepad \
-    galculator ranger ncdu hollywood arc-icon-theme nordic-darker-theme \
+    galculator ranger ncdu arc-icon-theme nordic-darker-theme pamixer \
     cups cups-pdf gtklp system-config-printer epdfview-gtk3 plex-media-player \
-    xorg-drivers xorg-xkill xorg base-devel gparted nerdfetch networkmanager
+    xorg-drivers xorg-xkill xorg base-devel gparted nerdfetch networkmanager \
+    lxappearance thunar-archive-plugin thunar-volman thunar-media-tags-plugin \
+    xfce xfce4-session ttf-mononoki-nerd ttf-hack-nerd arc-gtk-theme gtk-engine-murrine \
+    calc make cmake bison btop pasystray
     
     sudo systemctl enable NetworkManager
     sudo systemctl enable lightdm

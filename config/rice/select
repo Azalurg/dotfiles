@@ -1,0 +1,34 @@
+#!/bin/bash
+
+workdir="$HOME/.config/rice"
+rofi_comand="rofi -dmenu -theme $workdir/select.rasi"
+read -r current_theme < "$workdir/.rice"
+
+options=()
+index=0
+selected_index=0
+
+for dir in "$workdir"/themes/*/; do
+    theme_name=$(basename "$dir")
+    options+=("$theme_name")
+
+    # Check if the current rice matches the current iteration rice
+    if [[ "$current_theme" == "$theme_name" ]]; then
+        selected_index=$index
+    fi
+
+    ((index++))
+done
+
+selected=$(printf "%s\n" "${options[@]}" | $rofi_comand -selected-row "$selected_index")
+
+# If a valid option was selected, write the value to the configuration file and restart BSPWM.
+[[ -n "$selected" ]] || exit 1
+echo "$selected" > "${workdir}/.rice"
+
+THEME=$selected
+export THEME
+
+sh $workdir/set $selected
+
+exit 0

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+theme=$1
+sh $HOME/.config/rice/themes/$theme/set
