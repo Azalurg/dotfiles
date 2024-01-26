@@ -11,3 +11,5 @@ feh --bg-fill $workdir/wallpapers/wallpaper-01.jpg $workdir/wallpapers/wallpaper
 
 killall polybar
 polybar -q bar1 -c $workdir/polybar/config.ini &
+
+betterlockscreen -u $workdir/wallpapers/lockscreen-01.jpg
