@@ -1,0 +1,15 @@
+#!/bin/bash
+
+workdir="$HOME/.config/rice/themes/vancouver"
+
+bspc config top_padding 0
+bspc config bottom_padding 0
+bspc config normal_border_color "#53586F"
+bspc config focused_border_color "#0088CC"
+
+feh --bg-fill $workdir/wallpapers/wallpaper-01.png $workdir/wallpapers/wallpaper-02.jpg
+
+killall polybar
+polybar -q bar1 -c $workdir/polybar/config.ini &
+
+betterlockscreen -u $workdir/wallpapers/lockscreen-01.jpg
