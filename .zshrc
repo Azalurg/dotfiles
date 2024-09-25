@@ -15,6 +15,15 @@ export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..|..|...|...
 # PROMPT='%B%F{cyan}%4~%F{green} >%F{white} '
 # PROMPT="%B%F{green}%(4~|%-1~/.../%2~|%~)%u%b%F{blue} >%F{white} "
 
+# 
+
+# # Use bash-completion, if available
+# source /usr/share/git/completion/git-completion.zsh
+# source /usr/share/bash-completion/bash_completion 
+
+# Mask (files permission)
+# umask 002
+
 # History
 HISTSIZE=1000
 SAVEHIST=1000
@@ -65,8 +74,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-## Ruby
-export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH" 
+
+# Android
+# export ANDROID_SDK=/home/azalurg/Android/Sdk
+# export PATH=/home/azalurg/Android/Sdk/platform-tools:$PATH
 
 
 # Plugins

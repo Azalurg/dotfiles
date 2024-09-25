@@ -27,11 +27,12 @@ bspc rule -a Galculator state=floating
 # autostart 
 nm-applet --indicator &	# networt applet
 $HOME/.config/polybar/launch.sh	# polybar
-feh --bg-fill /usr/share/backgrounds/wallpaper.jpg	# wallpaper
+# feh --bg-fill /usr/share/backgrounds/wallpaper.jpg	# wallpaper
 picom -b &	# compositor
 dunst & # notification-daemon
 pasystray & # pulseaudio applet
 setxkbmap -layout pl
+mkdir /tmp/$USER
 
 # fix java applications
 export _JAVA_AWT_WM_NONREPARENTING=1

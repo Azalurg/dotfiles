@@ -19,7 +19,7 @@ ctrl + shift + t
 
 # lock screen
 super + x
-	betterlockscreen -l
+	betterlockscreen -l 
 
 # 
 # rofi

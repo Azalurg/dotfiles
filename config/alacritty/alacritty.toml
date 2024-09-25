@@ -1,0 +1,64 @@
+import = ["/home/azalurg/.config/alacritty/colors.toml"]
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[cursor]
+style = "Beam"
+vi_mode_style = "Underline"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 12
+
+[font.bold]
+family = "AnonymicePro Nerd Font Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "AnonymicePro Nerd Font Mono"
+style = "BoldItalic"
+
+[font.italic]
+family = "AnonymicePro Nerd Font Mono"
+style = "MediumItalic"
+
+[font.normal]
+family = "AnonymicePro Nerd Font Mono"
+style = "Regular"
+
+[[mouse.bindings]]
+action = "Copy"
+mouse = "Middle"
+
+[[mouse.bindings]]
+action = "Paste"
+mouse = "Right"
+
+[scrolling]
+history = 1000
+multiplier = 3
+
+[selection]
+save_to_clipboard = false
+
+[shell]
+program = "/usr/bin/zsh"
+
+[window]
+opacity = 0.9
+title = "Azalurg"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.dimensions]
+columns = 75
+lines = 25
+
+[window.padding]
+x = 7
+y = 5
