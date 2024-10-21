@@ -25,6 +25,9 @@ super + x
 # rofi
 #
 
+super + r
+	sh $HOME/.config/rice/select
+
 # application menu
 super + d
 	sh $HOME/.config/rofi/launchers/main.sh
@@ -33,10 +36,6 @@ super + d
 super + p
 	sh $HOME/.config/rofi/launchers/powermenu.sh
 
-# themes 
-super + r
-	bash $HOME/.config/rice/select
-	
 #
 # bspwm hotkeys
 #

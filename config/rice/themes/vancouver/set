@@ -2,8 +2,6 @@
 
 workdir="$HOME/.config/rice/themes/vancouver"
 
-bspc config top_padding 0
-bspc config bottom_padding 0
 bspc config normal_border_color "#53586F"
 bspc config focused_border_color "#0088CC"
 
