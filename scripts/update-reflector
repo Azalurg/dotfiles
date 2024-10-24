@@ -1,0 +1,73 @@
+#!/bin/bash
+
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+# Variables
+MIRRORLIST="/etc/pacman.d/mirrorlist"
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+TEMP_MIRRORLIST="/tmp/mirrorlist_$TIMESTAMP"
+PROCESS_NAME="reflector"
+
+GREEN="\e[32m"
+RED="\e[31m"
+RESET="\e[0m"
+
+echo_green () {
+    echo -e "${GREEN}$1${RESET}"
+}
+
+echo_red () {
+    echo -e "${RED}$1${RESET}"
+}
+
+# Update the mirrorlist using reflector and save it to a temporary file
+echo_green "Starting reflector to generate a new mirrorlist..."
+reflector \
+    --save "$TEMP_MIRRORLIST" \
+    --country DE,US,PL,GB,SE,CZ \
+    --protocol https \
+    --latest 10 \
+    --threads 2 \
+    --sort rate
+
+if [[ -f "$TEMP_MIRRORLIST" ]]; then
+    echo_green "New mirrorlist saved to $TEMP_MIRRORLIST."
+    notify-send $PROCESS_NAME "New mirrorlist generated successfully."
+else
+    echo_red "Failed to generate new mirrorlist. Exiting."
+    notify-send -u critical $PROCESS_NAME "Failed to generate new mirrorlist. Exiting."
+    exit 1
+fi
+
+# Ask user if they want to replace the original mirrorlist
+read -p "Do you want to replace the original mirrorlist with the new one? (YES/no): " USER_CHOICE
+
+if [[ "$USER_CHOICE" =~ ^[Yy][Ee][Ss]|[Yy]$ ]]; then
+    # Backup the old mirrorlist and replace it
+    BACKUP_FILE="/etc/pacman.d/mirrorlist_backup_$TIMESTAMP"
+    echo_green "Backing up current mirrorlist to $BACKUP_FILE..."
+
+    if sudo cp "$MIRRORLIST" "$BACKUP_FILE"; then
+        echo_green "Backup successful. Replacing the original mirrorlist..."
+        
+        if sudo mv "$TEMP_MIRRORLIST" "$MIRRORLIST"; then
+            echo_green "Original mirrorlist replaced successfully."
+            notify-send $PROCESS_NAME "Original mirrorlist replaced successfully."
+        else
+            echo_red "Failed to replace the original mirrorlist. Exiting."
+            notify-send -u critical $PROCESS_NAME "Failed to replace the original mirrorlist. Exiting."
+            exit 1
+        fi
+    else
+        echo_red "Failed to backup the original mirrorlist. Exiting."
+        notify-send -u critical $PROCESS_NAME "Failed to backup the original mirrorlist. Exiting."
+        exit 1
+    fi
+
+else
+    echo_green "Keeping the original mirrorlist unchanged."
+fi
+
+echo_green "Process completed."
+notify-send $PROCESS_NAME "Process completed."
